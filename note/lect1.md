@@ -1,4 +1,4 @@
-# Lecture 1, 2015/1/20
+# EPL Lecture 1, 2015/1/20
 
 C\++ basics
 

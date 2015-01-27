@@ -1,4 +1,4 @@
-#Intro to Computational Linguistics, Lect 3, 2015/1/27
+#EPL Lecture 3, 2015/1/27
 
 ## Project 1
 Project 1 is split into 3 parts to be done over the weeks.
