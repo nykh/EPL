@@ -36,9 +36,9 @@ Choose: `Eclipse -> New -> Project... -> C/C++ -> Makefile project with pre-exis
 
 Instead of comparing `char` against `char`, we can read 64bits (8 `char`s) at a time and compare them as an integer.
 
-** Problem**: **Endianness** (on a little endian machine) and imcompatible lengths
+**Problem**: **Endianness** (on a little endian machine) and imcompatible lengths
 
-** Solution**: padding to multiple of 8 and store backward
+**Solution**: padding to multiple of 8 and store backward
 
 ### constexpr
 `constexpr` A new keyword in C++11, that declares something is constant. 
