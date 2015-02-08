@@ -2,7 +2,7 @@
 
 C\++ basics
 
-```
+```cpp
 struct Foo {
 private:
 	int x;
@@ -22,13 +22,13 @@ int main(void) {
 What happens here at location *A*, is an implicit reference to f is passed to the `doit()` function as `this`.
 
 ---
-```
+```cpp
 Foo *p;
 p = new Foo;
 ```
 `new` and`delete` keywords allocate memory and call constructor for the new object instance. This is equivalent to (per new syntax)
 
-```
+```cpp
 p = operator new(sizeof(Foo));
 new(p) Foo{};
 ```
@@ -37,7 +37,7 @@ First line calls `new` operator. Second line calls the constructor with implicit
 ---
 ## Collection- vector
 
-```
+```cpp
 std::vector<int> v;
 
 while(auto x ...) {

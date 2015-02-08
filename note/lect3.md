@@ -19,7 +19,7 @@ Part A, due **next Thursday (2/5)**
 
 **makefile**defines actions on `.c` and `.o` files.
 
-```
+```makefile
 CXXSRCS=$(shell ls *.cpp)
 SRC=$(DXXSRC)
 OBJS=$(CXXSRC:.cpp=.o)
@@ -58,7 +58,7 @@ When an function in Java ends, it just ends. Immediately aborts. In C++, when a 
 
 ### returns l-value and r-value
 
-```
+```cpp
 char& operator[](uint32_t k) {
 	// return a lvalue copy to a character
 }
@@ -70,7 +70,7 @@ char operator[](uint32_t k) const {
 
 ## Template
 
-```
+```cpp
 template <typename ElemType>
 class LinkedList {
 private:

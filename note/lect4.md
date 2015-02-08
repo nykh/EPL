@@ -3,7 +3,7 @@
 ## Q&A
 ###### Why  we use operator new() instead of malloc()
 They might use different brackets. So use
-```
+```cpp
 p = operator new(sizeof(T));
 new (p) T {args};
 delete p;
@@ -15,7 +15,7 @@ Because **the size of size_t variable** itself is not same across platforms, and
 # template LinkedList Example
 Continuing from last lecture
 
-```
+```cpp
 template <typename ElemType>
 class LinkedList {
 private:

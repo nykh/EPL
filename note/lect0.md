@@ -11,7 +11,7 @@ Bjarne Stroustrup,
   "go find out how to set up SVN on Ubuntu"
 
 ** useful SVN commands: **
-```
+```bash
 svn checkout
 svn commit
 svn update

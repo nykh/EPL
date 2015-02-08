@@ -8,7 +8,7 @@ Next week: iterator()
 Move: Taking advantge of shallow copy when shallow copy is the right thing to do. Many scenarios this is more efficient than copying.
 
 **C++11 Solution to the move problem/**
-```
+```cpp
 operator=(const T&);
 operator=(T&&);
 ```
@@ -23,7 +23,7 @@ You need to manually run the destructor for the object after moveing it. Normall
 
 `std::move()` smart typecast to rvalue reference.
 
-```
+```cpp
 void move(T&&);
 
 // move constructor
