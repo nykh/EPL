@@ -1,0 +1,3 @@
+# ignore the svn folder for now in case of leaking code and/or svn-git conflict
+sp2015/
+hw/
