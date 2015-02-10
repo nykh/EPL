@@ -72,7 +72,7 @@ The head note will keep a value of length and will always point to dummy. Also i
 
 When expanding a template, it is required to spell out the template for each member function.
 
-```
+```cpp
 template <typename T>
 void LinkedList<T>::destroy(void) {
     Cell* p = dummy->next;
@@ -86,7 +86,7 @@ void LinkedList<T>::destroy(void) {
 ```
 
 Another wierd thing about template is you need two template arguments on different line to specify a template with multiple typename arguments.
-```
+```cpp
 template <typename LHS_ELEM>
 template <typename RHS_ELEM>
 LinkedList<LSH_ELEM>::LinkedList(const LinkedList<RHS_ELEM>& that) {
@@ -102,7 +102,7 @@ LinkedList<LSH_ELEM>::LinkedList(const LinkedList<RHS_ELEM>& that) {
 Everytime you provide a type argument to **instantiate** a type, it asks the compiler to generate a new type. So `LinkedList<A>` is totally unrelated to `LinkedList<B>`.
 
 ## friend syntax
-```
+```cpp
 template<typename T>
 friend class LinkedList;
 ```
@@ -112,7 +112,7 @@ constrain a constructor that it can only be used explicitly as a construtor, not
 
 ## constructor
 For an *automatic* variable.
-```
+```cpp
 int x;           // not initialize, some random value
 int x{};         // initialize to 0
 int x = 42;
@@ -124,7 +124,7 @@ int x{42};       // equivalent to "int x = 42"
 Encapsulation for iterable containers. Users do not need ot know the implemenation and boundary conditions.
 
 ### Syntax to use
-```
+```cpp
 LinkedList<int> fred;
 LinkedList<int>::iterator p = fred.begin();
 while(p != fred.end()) {
@@ -134,7 +134,7 @@ while(p != fred.end()) {
 ```
 ### also for-each style
 `const auto&` is usually the best practicce.
-```
+```cpp
 for(const auto& x : fred) {
 	cout << x;
 }

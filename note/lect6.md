@@ -46,6 +46,7 @@ while( p != list.end()) {
 ```
 
 ### STL algorithm
+
 1. Designed to be generic as respect to element data type.
 2. Generic with respect to data structure too.
 3. Has predictable time complexity
@@ -57,6 +58,7 @@ while( p != list.end()) {
 ### What do the STL iterator provide?
 
 Pointer operations
+
 1. `*p` - **Dereference**
 2. `++p` - increment = **advance**
 3. `p == q` - **equality comparison**. Similarly, `!=` is just the inverse predicate.
@@ -69,6 +71,7 @@ Pointer operations
 Note, as stated before, **Not all data structure supports all of these operations**.
 
 STL classifies collections into 3 (5?) categories.
+
 1. forward_iterator: supports the first 3 operations
 2. bidirectional iterator: supports the first 4
 3. random_access: supports all 6 
