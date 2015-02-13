@@ -1,0 +1,130 @@
+<?xml version='1.0' encoding='utf-8'?>
+<classtemplate id="epl::vector" name="vector" xmlns="http://jessevdk.github.com/cldoc/1.0">
+  <templatetypeparameter id="epl::vector::T" name="T" />
+  <constructor id="epl::vector::vector&lt;T&gt;" name="vector&lt;T&gt;" />
+  <constructor id="epl::vector::vector&lt;T&gt;" name="vector&lt;T&gt;">
+    <brief>copy constructor</brief>
+    <argument id="epl::vector::vector&lt;T&gt;::that" name="that">
+      <type name="vector&lt;T&gt;" qualifier=" const &amp;" ref="epl::vector#epl::vector" />
+    </argument>
+  </constructor>
+  <constructor id="epl::vector::vector&lt;T&gt;" name="vector&lt;T&gt;">
+    <brief>move constructor</brief>
+    <argument id="epl::vector::vector&lt;T&gt;::that" name="that">
+      <type name="T" />
+    </argument>
+  </constructor>
+  <constructor id="epl::vector::vector&lt;T&gt;" name="vector&lt;T&gt;">
+    <doc>
+ explicit numbered constructor. It will construct a vector
+ of exactly `size` capacity and default-initialized elements.
+</doc>
+    <argument id="epl::vector::vector&lt;T&gt;::size" name="size">
+      <type builtin="yes" name="int" />
+    </argument>
+  </constructor>
+  <destructor id="epl::vector::~vector&lt;T&gt;" name="~vector&lt;T&gt;" virtual="yes" />
+  <method id="epl::vector::operator=" name="operator=">
+    <brief>copy assignment</brief>
+    <return>
+      <type name="vector&lt;T&gt;" qualifier=" &amp;" ref="epl::vector#epl::vector" />
+    </return>
+    <argument id="epl::vector::operator=::rhs" name="rhs">
+      <type name="vector&lt;T&gt;" qualifier=" const &amp;" ref="epl::vector#epl::vector" />
+    </argument>
+  </method>
+  <method id="epl::vector::operator=" name="operator=">
+    <brief>move assignment</brief>
+    <return>
+      <type name="vector&lt;T&gt;" qualifier=" &amp;" ref="epl::vector#epl::vector" />
+    </return>
+    <argument id="epl::vector::operator=::rhs" name="rhs">
+      <type name="T" />
+    </argument>
+  </method>
+  <method id="epl::vector::push_back" name="push_back">
+    <doc>
+Care must be taken when resizing because a case illustrated by
+test case PhaseB2_0 can occur where you try to push an element on the vector to itself.
+If we simply resize, we might invalidate  before we can move/copy it
+</doc>
+    <return>
+      <type builtin="yes" name="void" />
+    </return>
+    <argument id="epl::vector::push_back::e" name="e">
+      <type name="T" qualifier=" const &amp;" />
+    </argument>
+  </method>
+  <method id="epl::vector::push_back" name="push_back">
+    <doc>
+Care must be taken when resizing because a case illustrated by
+test case PhaseB2_0 can occur where you try to push an element on the vector to itself.
+If we simply resize, we might invalidate  before we can move/copy it
+</doc>
+    <return>
+      <type builtin="yes" name="void" />
+    </return>
+    <argument id="epl::vector::push_back::e" name="e">
+      <type name="T" />
+    </argument>
+  </method>
+  <method id="epl::vector::pop_back" name="pop_back">
+    <return>
+      <type builtin="yes" name="void" />
+    </return>
+  </method>
+  <method id="epl::vector::push_front" name="push_front">
+    <doc>
+Care must be taken when resizing because a case illustrated by
+test case PhaseB2_0 can occur where you try to push an element on the vector to itself.
+If we simply resize, we might invalidate  before we can move/copy it
+</doc>
+    <return>
+      <type builtin="yes" name="void" />
+    </return>
+    <argument id="epl::vector::push_front::e" name="e">
+      <type name="T" qualifier=" const &amp;" />
+    </argument>
+  </method>
+  <method id="epl::vector::push_front" name="push_front">
+    <doc>
+Care must be taken when resizing because a case illustrated by
+test case PhaseB2_0 can occur where you try to push an element on the vector to itself.
+If we simply resize, we might invalidate  before we can move/copy it
+</doc>
+    <return>
+      <type builtin="yes" name="void" />
+    </return>
+    <argument id="epl::vector::push_front::e" name="e">
+      <type name="T" />
+    </argument>
+  </method>
+  <method id="epl::vector::pop_front" name="pop_front">
+    <return>
+      <type builtin="yes" name="void" />
+    </return>
+  </method>
+  <method id="epl::vector::operator[]" name="operator[]">
+    <brief>random accessor</brief>
+    <return>
+      <type name="" qualifier=" &amp;" />
+    </return>
+    <argument id="epl::vector::operator[]::index" name="index">
+      <type builtin="yes" name="int" />
+    </argument>
+  </method>
+  <method id="epl::vector::operator[]" name="operator[]">
+    <brief>const random accessor</brief>
+    <return>
+      <type name="" qualifier=" &amp;" />
+    </return>
+    <argument id="epl::vector::operator[]::index" name="index">
+      <type builtin="yes" name="int" />
+    </argument>
+  </method>
+  <method id="epl::vector::size" name="size">
+    <return>
+      <type name="uint32_t" />
+    </return>
+  </method>
+</classtemplate>

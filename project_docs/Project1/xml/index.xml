@@ -1,0 +1,9 @@
+<?xml version='1.0' encoding='utf-8'?>
+<index xmlns="http://jessevdk.github.com/cldoc/1.0">
+  <namespace name="epl" ref="epl#epl">
+    <class name="invalid_iterator" ref="epl::invalid_iterator#epl::invalid_iterator" />
+    <classtemplate name="vector" ref="epl::vector#epl::vector">
+      <templatetypeparameter id="epl::vector::T" name="T" />
+    </classtemplate>
+  </namespace>
+</index>

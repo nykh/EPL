@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='utf-8'?>
+<class id="epl::invalid_iterator" name="invalid_iterator" xmlns="http://jessevdk.github.com/cldoc/1.0">
+  <enum anonymous="yes" id="epl::invalid_iterator::SeverityLevel" name="SeverityLevel">
+    <enumvalue id="epl::invalid_iterator::SeverityLevel::SEVERE" name="SEVERE" value="0" />
+    <enumvalue id="epl::invalid_iterator::SeverityLevel::MODERATE" name="MODERATE" value="1" />
+    <enumvalue id="epl::invalid_iterator::SeverityLevel::MILD" name="MILD" value="2" />
+    <enumvalue id="epl::invalid_iterator::SeverityLevel::WARNING" name="WARNING" value="3" />
+  </enum>
+  <field id="epl::invalid_iterator::level" name="level">
+    <type name="SeverityLevel" ref="epl::invalid_iterator#epl::invalid_iterator::SeverityLevel" />
+  </field>
+  <constructor id="epl::invalid_iterator::invalid_iterator" name="invalid_iterator">
+    <argument id="epl::invalid_iterator::invalid_iterator::level" name="level">
+      <type name="SeverityLevel" ref="epl::invalid_iterator#epl::invalid_iterator::SeverityLevel" />
+    </argument>
+  </constructor>
+  <method id="epl::invalid_iterator::what" name="what" virtual="yes">
+    <return>
+      <type builtin="yes" name="char" qualifier=" const *" />
+    </return>
+  </method>
+</class>
