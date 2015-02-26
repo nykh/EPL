@@ -213,4 +213,42 @@ What if I want my `max` to suppot the `Complex` type? We need to add more terms 
 template<typename T> struct rank<std::complex<T>> { static constexpr int value = rank<T>::value; }
 ```
 
+## Phase C update
 
+### Example 1:
+```cpp
+vector<int> v {1, 2, 3};
+auto ite = v.end();
+v.pop_back();
+std::cout << *ite << std::endl;
+```
+(A MILD exception is thrown because condition 1 is not true.)
+
+### Example2:
+```cpp
+vector<int> v {1, 2, 3};
+auto ite = v.end() - 1;
+v.pop_back();
+std::cout << *ite << std::endl;
+```
+ (A SEVERE exception is thrown because conditions 1 and 2 are true.)
+
+### Example 3:
+```cpp
+vector<int> v {1, 2, 3};
+auto ite = v.begin();
+v.pop_front();
+std::cout << *ite << std::endl;
+```
+   (A MILD exception is thrown because condition 2 is not true. Note that index 0 in the modified vector is integer 2.)
+
+### Example 4:
+```cpp
+vector<int> v {1}; // only one integer in the vector
+auto ite = v.begin();
+v.pop_front();       // This line can do v.pop_back(). The result is the same.
+std::cout << *ite << std::endl;
+```
+   (A SEVERE exception should be thrown.)
+
+The updated test file (Vector_PhaseC_unitetests.cpp) is pushed to example/GTest folder. Please update your Vector_PhaseC_unitetests.cpp accordingly.
