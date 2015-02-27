@@ -131,6 +131,7 @@ This is even better than using `move` constructor. Where the client construcst t
 ```cpp
 template<typename... Arg>
 void emplace_back(Arg... args) {
+	// ensure capacity
 	new(this->data + this->endIndex) T{args};
     endIndex += 1;
 }
@@ -142,7 +143,7 @@ Remaing problem is, in the `{args}` passed to instialization list constructor, s
 template<typename... Arg>
 void emplace_back(Arg&&... args) {
 	// ensure capacity
-	new(this->data + this->endIndex) T{std::forward(args)};
+	new(this->data + this->endIndex) T{ std::forward(args)... };
     endIndex += 1;
 }
 ```
