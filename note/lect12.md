@@ -2,7 +2,7 @@
 
 ## Project 2
 
-`vsipl`/ `BLAS` Some linear algebra library. The project two is going to be about implementing efficient vectors that support these libraries.
+`vsipl` and `BLAS` are some examples of linear algebra libraries. The project two is going to be about implementing efficient vectors that support these libraries.
 
 for example, in `BLAS`  there is a function called `saxpy` that does thing like this:
 
@@ -40,7 +40,7 @@ Notice however, all the assignment in the loop calls (hopefully) the move assign
 
 Another problem is that the compiler cannot parallelize the addition and multiplication, since in the formula
 
-```
+```cpp
 z = a*x + y
 ```
 
@@ -55,10 +55,12 @@ We **postpone some evaluation** to a later point of program and make them happen
 
 ## construct heterogenous tuple on the fly
 
-Realize `pack` in this snippet:
+Realize this snippet
+
+**Note** plus (+) is **right-associative**.
 
 ```cpp
-auto x = pack{} << 42 << "Hello world" << 3.14159;
+auto x = pack{} + 42 + "Hello world" + 3.14159;
 ```
 
 ### Implemenation
@@ -139,7 +141,9 @@ void PrintFields(const tuple<T, Args...> &t) {
 } 
 ```
 
-The problem is, C++ compiler doesn't seem to recognize pattern matching so smartly. What we want is this kind of functionality:
+The problem is, C++ compiler doesn't seem to recognize pattern matching so smartly, possibly because it's a conflict with its functional overloading feature. What we want is this kind of functionality:
+
+Let's read [this article](http://en.cppreference.com/w/cpp/language/parameter_pack) about parameter packing and pattern matching
 
 ```cpp
 template <typename typename... Args>

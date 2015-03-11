@@ -200,8 +200,8 @@ struct choose_type {
 
 template<typename T1, typename T2>
 typename choose_type<T>::type max(const T1& x, const T2& y) {
-if(x < y) return yl
-else return consst_cast<T&>(x);
+if(x < y) return y;
+else return x**;
 }
 ```
 
@@ -210,7 +210,9 @@ else return consst_cast<T&>(x);
 What if I want my `max` to suppot the `Complex` type? We need to add more terms to meta functions.
 
 ```cpp
-template<typename T> struct rank<std::complex<T>> { static constexpr int value = rank<T>::value; }
+template<typename T> struct rank<std::complex<T>> {
+  static constexpr int value = rank<T>::value;
+}
 ```
 
 ## Phase C update
