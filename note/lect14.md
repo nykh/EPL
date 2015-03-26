@@ -1,4 +1,4 @@
-#EPL Lecture 13, 2015/3/24
+#EPL Lecture 14, 2015/3/24
 
 ## Project 2
 Use EPL vector, this is provided by grader and is a testing mock that log number of copies, etc, for easier grading.
