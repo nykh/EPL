@@ -88,8 +88,8 @@ I want to write some generic function like
 ```cpp
 template<typename T>
 T& max(T& x, T& y) {
-if(x < y) return yl
-else return consst_cast<T&>(x); // NOOOOOO
+if(x < y) return y;
+else return x; // NOOOOOO
 }
 ```
 
@@ -101,7 +101,7 @@ But I find users might pass rvalue to it like `max(x, 42)`.
 ```cpp
 template<typename T>
 T& max(const T& x, const T& y) {
-if(x < y) return yl
+if(x < y) return consst_cast<T&>(y);
 else return consst_cast<T&>(x); // NOOOOOO
 }
 ```

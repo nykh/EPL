@@ -158,23 +158,20 @@ void PrintFields(const tuple<Args...> &t) {
 We then need to write our own template type function to do this.
 
 ```cpp
+template <typename T...> struct head_type;
 template <typename T> struct head_type<T> { using type = T; };
-
 template <typename T, typename... Tail>
-struct<T, Tail...> { using type = T; };
-
-template<typename T...> struct head_type;
+  struct head_type<T, Tail...> { using type = T; };
 ```
 
 This solves it for `head_type`, We can't however assign an alias to an elipsis type collectionn. We will probably have to go with making them a tuple.
 
 ```cpp
-template <typname... T>
-struct tail type.
+template <typename... T> struct tail_type.
 
-template<typename T> struct tail_type<T> { using type = T; };
+template <typename T> struct tail_type<T> { using type = T; };
 
-template<typename T, typename... Tail>
+template <typename T, typename... Tail>
 struct tail_type<T, Tail...> {
   using type = tuple<Tail...>;
 };
