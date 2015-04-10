@@ -1,4 +1,4 @@
-;#EPL Lecture 17, 2015/4/7
+#EPL Lecture 17, 2015/4/7
 
 ## Project 2
 
