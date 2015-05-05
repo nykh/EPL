@@ -72,6 +72,9 @@ But what should the signature be? Let's think
 | double    | double    | double, double => double |
 | `complex<double>`  | `complex<double>`  |  `complex<double>&, complex<double>& => complex<double>`   |
 |  double   | `complex<double>`  | `complex<double>&, complex<double>& => complex<double>`   |
+
+It is obvious that in the last case, the only possible solution is to construct a temporary copy of `complex<double>` and pass that temporary copy.
+
 ### Should type conversion be supported for Unary Proxy?
 For example,
 
@@ -84,3 +87,42 @@ auto y = x.apply(my_sqrt);
 Can this work to transform `int` into `double`?
 
 Right now my implementation says **NO**
+
+### How many different operators should I support
+
+For each operations
+
+| left | right |
+|------|-------|
+| valarray | valarray |
+| valarray | Proxy |
+| valarray | scalar |
+| Proxy    | valarray |
+| Proxy    | Proxy    |
+| Proxy    | scalar |
+| scalar   | valarray |
+| scalar   | Proxy |
+
+### Problem: incorrect pattern matching
+
+##### Behavior
+haing defined
+
+```cpp
+template <typename V>
+auto operator+(vec_wrap<V> rhs)
+-> vec_wrap<Proxy<vec_wrap<epl::vector<Scalar>>, vec_wrap<V>,
+	std::plus<typename meta::_Promote<Scalar, meta::VType<V>>::type>>>
+{
+return { *this, rhs, std::plus<typename meta::_Promote<Scalar, typename meta::VType<V>>::type>{}};
+}
+
+template <typename SR>
+auto operator+(SR rhs)
+-> vec_wrap<Proxy<vec_wrap<epl::vector<Scalar>>, vec_wrap<ScalarProxy<SR>>, std::plus<typename meta::_Promote<Scalar, SR>::type>>>
+{
+return { *this, temp, std::plus<typename meta::_Promote<Scalar, SR>::type>{}};
+}
+```
+
+This is solved by using `is_scalar_type` macro.
